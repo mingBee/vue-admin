@@ -14,23 +14,19 @@ import router from './route/index'
 import Mock from './mock'
 Mock.bootstrap();
 import 'font-awesome/css/font-awesome.min.css'
+import {filterRouter} from '@/util/util'
+import routes from './route/routes'
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
-//NProgress.configure({ showSpinner: false });
-
-// let registerRouteFresh = true;
-
-// router.addRoutes(routers);
+// let authList=window.localStorage.getItem('setAuthList')||['table','list','menuAdmin','role','nav3'] //权限列表
+// let extraRouters=filterRouter(routes.asynRoutes,authList);
+let registerRouteFresh = true;
+debugger;
 router.beforeEach((to, from, next) => {
-  //NProgress.start();
-  // if(registerRouteFresh){
-    
-  //   registerRouteFresh=false;
-  // }
-  // next()
+
   debugger;
   if (to.path == '/login') {
     sessionStorage.removeItem('user');
@@ -39,7 +35,13 @@ router.beforeEach((to, from, next) => {
   if (!user && to.path != '/login') {
     next({ path: '/login' })
   } else {
-    next()
+    if(registerRouteFresh){
+      // router.addRoutes(extraRouters);
+      registerRouteFresh=false;
+      next();
+    }else{
+      next();
+    }
   }
 })
 

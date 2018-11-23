@@ -43,10 +43,10 @@
       handleReset2() {
         this.$refs.ruleForm2.resetFields();
       },
-      handleSubmit2(ev) {
+      handleSubmit2(ev) { 
         var _this = this;
         this.$refs.ruleForm2.validate((valid) => {
-          if (valid) {
+          if (valid) { 
             //_this.$router.replace('/table');
             this.logining = true;
             //NProgress.start();

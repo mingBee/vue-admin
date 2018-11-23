@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrap">
     <el-button type="primary" @click="submit">保存</el-button>
     <el-tree
       :data="roleList"
@@ -14,7 +14,7 @@
 
 <script>
 import {initRole} from '@/util/util'
-import {asynRoutes} from '@/route/routes'
+import router from '@/route/routes'
   export default {
     data() {
       return {
@@ -45,7 +45,7 @@ import {asynRoutes} from '@/route/routes'
       },
     },
     mounted(){
-      this.roleList=this.initRole(asynRoutes);
+      this.roleList=this.initRole(router.asynRoutes);
     },
     methods:{
       /**
@@ -94,5 +94,8 @@ import {asynRoutes} from '@/route/routes'
 </script>
 
 <style lang="scss" scoped>
-  
+  .wrap{
+    background-color: red;
+    height:100%;
+  }
 </style>

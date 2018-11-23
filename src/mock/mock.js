@@ -150,5 +150,16 @@ export default {
       });
     });
 
+    //获取宠物列表
+    mock.onGet('/pets').reply(config => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve([200, {
+            msg: '获取宠物列表成功'
+          }]);
+        }, 1000);
+      });
+    });
+
   }
 };

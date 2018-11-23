@@ -17,9 +17,13 @@ export default {
 </script>
 
 <style lang="scss">
+html{
+	height:100%;
+}
 body {
 	margin: 0px;
 	padding: 0px;
+	height:100%;
 	/*background: url(assets/bg1.jpg) center !important;
 		background-size: cover;*/
 	// background: #1F2D3D;

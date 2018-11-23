@@ -11,7 +11,7 @@ import Page5 from '../views/nav2/Page5.vue'
 import Page6 from '../views/nav3/Page6.vue'
 import echarts from '../views/charts/echarts.vue'
 
-export let routes = [
+let routes = [
     {
         path: '/login',
         component: Login,
@@ -39,10 +39,10 @@ export let routes = [
         hidden: true,
         redirect: { path: '/404' }
     },
-    //{ path: '/main', component: Main },
+    { path: '/main', component: Main },
 ];
 
-export let asynRoutes=[
+let asynRoutes=[
     {
         path: '/',
         component: Home,
@@ -94,3 +94,5 @@ export let asynRoutes=[
         ]
     }    
 ];
+
+export default {routes,asynRoutes}

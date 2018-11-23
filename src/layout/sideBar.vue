@@ -58,7 +58,7 @@ import { initMenu } from "@/util/util";
         // if(menuStore.extraMenu.length===0){
           this.$store.commit('initMenu');
           let menuStore=this.$store.state.menu;
-          this.$router.addRoutes(menuStore.extraMenu);
+          // this.$router.addRoutes(menuStore.extraMenu);
         // }
       },
       onSubmit() {
