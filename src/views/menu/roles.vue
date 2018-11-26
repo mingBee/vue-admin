@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <el-button type="primary" @click="submit">保存</el-button>
+    <el-button class="submit-btn" type="primary" @click="submit">保存</el-button>
     <el-tree
       :data="roleList"
       show-checkbox 
@@ -95,7 +95,9 @@ import router from '@/route/routes'
 
 <style lang="scss" scoped>
   .wrap{
-    background-color: red;
     height:100%;
+  }
+  .submit-btn{
+    margin:15px 0;
   }
 </style>
